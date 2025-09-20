@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Luigi Ferraro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Left Column - Dark */
+        .left-column {
+            width: 20%;
+            background-color: #2c2c2c;
+            color: white;
+            padding: 40px 25px;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin: 0 auto 30px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            overflow: hidden;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #2c2c2c;
+        }
+
+        .education {
+            margin-bottom: 30px;
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .education-item h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            font-size: 12px;
+            color: #ccc;
+            margin-bottom: 3px;
+        }
+
+        .references {
+            margin-bottom: 30px;
+        }
+
+        .reference-item {
+            margin-bottom: 15px;
+        }
+
+        .reference-item h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .reference-item p {
+            font-size: 12px;
+            color: #ccc;
+            margin-bottom: 3px;
+        }
+
+        /* Right Column - Light */
+        .right-column {
+            width: 80%;
+            background-color: #f8f8f8;
+            padding: 40px 30px;
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .name {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #2c2c2c;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 18px;
+            text-transform: uppercase;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .timeline-section {
+            margin-bottom: 0px;
+        }
+
+        .generic-section {
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .about-content {
+            margin-top: 20px;
+        }
+
+        .about-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .section {
+            margin-bottom: 0px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;            
+        }
+
+        .section-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #2c2c2c;
+            margin-right: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: white;
+        }
+
+        .section-title-right {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #2c2c2c;
+            margin-right: 10px;
+        }
+
+        .section-line {
+            flex: 1;
+            height: 2px;
+            background-color: #2c2c2c;
+        }
+
+        .timeline {
+            position: relative;
+            padding-top: 10px;
+            padding-left: 20px;
+            margin-top: 0px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 13px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #2c2c2c;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 10px;
+            padding-top: 5px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background-color: #2c2c2c;
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-size: 14px;
+            font-weight: bold;
+            color: #2c2c2c;
+            margin-bottom: 5px;
+        }
+
+        .timeline-company {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c2c2c;
+            margin-bottom: 5px;
+        }
+
+        .timeline-position {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .timeline-description {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .timeline-description p {
+            margin-bottom: 10px;
+        }
+
+        .timeline-closure {
+            margin: 0px;
+            padding-left: 13px;
+        }
+
+        .timeline-end-line {
+            width: 100%;
+            height: 1px;
+            background-color: #2c2c2c;
+            position: relative;
+        }        
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .skill-item {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .skill-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #2c2c2c;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .left-column,
+            .right-column {
+                width: 100%;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .figure-image {
+            border: 3px solid #2c2c2c;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            margin: 0 15px 15px 0px;
+			float: right;
+            clear: both;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <!-- Profile Picture -->
+            <div class="profile-picture">
+                <img src="./img/myphoto.jfif" alt="Profile Picture">
+            </div>
+
+            <!-- Contact Section -->
+            <div class="contact-info">
+                <h3 class="section-title">Contatto</h3>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <div>Via E.Toti, 18</div>
+                        <div>Bassano del Grappa (VI)</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div>+39 3930227248</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div>ferraro.luigi@gmail.com</div>
+                </div>
+            </div>
+
+            <!-- Education Section -->
+            <div class="education">
+                <h3 class="section-title">Formazione</h3>
+                <div class="education-item">
+                    <h4>Istituto Tecnico L. Einaudi di Bassano del Grappa</h4>
+                    <p>1985-1990</p>
+                    <p>Diploma di Ragioniere 58/60</p>
+                </div>
+                <div class="education-item">
+                    <h4>Università di Milano, Facoltà di Scienze dell'informazione</h4>
+                    <p>1991-1993</p>
+                    <p>Non laureato</p>
+                </div>
+            </div>
+             
+            <!-- Skills Section -->
+            <div class="references">
+                <h3 class="section-title">Conoscenze</h3>
+                <div class="reference-item">
+                    <h4>Linguaggi di Programmazione</h4>
+                    <p>Visual Basic, VB.NET, C, C++, C#, Java, JavaScript, SQL, HTML, CSS</p>
+                </div>
+                <div class="reference-item">
+                    <h4>Sistemi Operativi</h4>
+                    <p>Windows, Mac, Linux</p>
+                </div>
+                <div class="reference-item">
+                    <h4>Framework</h4>
+                    <p>Microsoft.Net, ASP.NET, Bootstrap, Angular.js, Node.js</p>
+                </div>
+                <div class="reference-item">
+                    <h4>Database</h4>
+                    <p>SQL Server, PostgreSQL, MySQL</p>
+                </div>
+                <div class="reference-item">
+                    <h4>Ambienti di Sviluppo e IDE</h4>
+                    <p>Visual Studio, Visual Studio Code, Cursor,SQL Server Management Studio, Eclipse</p>
+                </div>                
+                <div class="reference-item">
+                    <h4>Tools</h4>
+                    <p>Git, GitHub, Docker, VMWare</p>
+                </div>
+                <div class="reference-item">
+                    <h4>Lingue Straniere</h4>
+                    <p>Inglese (Buono), Francese (Scolastico)</p>
+                </div>
+            </div>            
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <!-- Header -->
+            <div class="header">
+                <h1 class="name">Luigi Ferraro</h1>
+                <h2 class="title">Software Architect e Imprenditore</h2>
+            </div>
+
+            <!-- About Section -->
+            <div class="generic-section">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-user"></i></div>
+                    <h3 class="section-title-right">Mi racconto</h3>
+                    <div class="section-line"></div>
+                </div>
+                <div class="about-content">
+                    <p>E' strano scrivere un curriculum a 52 anni. La prima e ultima volta che che l'ho fatto ne avevo 23. Una vita fa. Costringe a mettersi comodi e ripercorrere la propria esistenza, riguardandola come se si stesse vedendo un film, come se fosse la vita di un altro. La tentazione è stata quella di scaricare un modello di word e scrivere qualche dato anagrafico, ma poi mi sono messo qui, davanti a questo foglio bianco, e le parole hanno iniziato a fluire.</p>                    
+                </div>
+            </div>
+
+            <!-- Primi Anni -->
+            <div class="timeline-section">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-baby-carriage"></i></div>
+                    <h3 class="section-title-right">Primi anni</h3>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1972 - 1980</div>
+                        <div class="timeline-description">							
+                            <p><img class="figure-image" src="./img/zx80.png" style="width: 10%;">
+							Sono nato nel 1972 a Bassano del Grappa. La mia vita da informatico é iniziata 8 anni dopo quando, durante le feste di Natale, come di consueto, la famiglia con tutte le sue propaggini (nonne, zii, cugini) si trovava nella grande casa dei nonni. Là mio zio Luigi (sarà un caso ma ha il mio stesso nome) ha portato un oggetto “magico”. Uno ZX Spectrum 80 collegato ad un altro oggetto misterioso, un piccolo plotter. Ha iniziato a battere i tasti gommosi di quello che era uno dei primissimi home computer della storia. Io guardavo estasiato l’oggetto ed i codici “magici” che uscivano dalle sue dita. E quando, dopo un po’, lanciando il programma che aveva appena scritto, nello schermo è apparsa una stella cometa… e poco dopo è stata stampata dal plotter… beh… il mio destino era stato segnato. Avrei capito cos’erano quei codici ed un giorno sarei stato anch’io capace di scriverli.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1980 - 1985</div>
+                        <div class="timeline-description">
+                            <p style="margin-bottom: 50px;"><img class="figure-image" src="./img/vic20.png" style="width: 10%;">
+							A 9 anni avevo il mio primo computer, un Commodore Vic20. Aveva 3,5Kb di memoria. Meno di quella che ha oggi un citofono :-) Eppure con quello ho imparato a programmare, prima in Basic e dopo, visto che la potenza non mi bastava, anche in assembler. Ho fatto quasi tutto da solo, con qualche libercolo ed un corso comprato in edicola. E tanto tanto tempo e passione. Il fuoco si era acceso e non si sarebbe più spento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scuole Superiori -->
+            <div class="timeline-section">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3 class="section-title-right">Esperienze Scolastiche</h3>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1985 - 1990</div>
+                        <div class="timeline-company"></div>
+                        <div class="timeline-position">Istituto Tecnico L. Einaudi di Bassano del Grappa</div>
+                        <div class="timeline-description">
+                            Alle superiori studio in un corso sperimentale di ragioneria all'istituto Einaudi di Bassano. L'unica scuola, a quel tempo, che si vantava di avere fra le materie di insegnamento l'informatica. Ma gli anni erano passati e, da autodidatta, ne sapevo più di quella povera professoressa di matematica che era stata catapultata in un mondo evidentemente non suo. Esco dalla ragioneria con ottimi voti: 58/60 e l'amaro in bocca per aver capito che la mia strada non sarebbe stata quella che i miei studi avrebbero previsto.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">1991 - 1993</div>
+                        <div class="timeline-company"></div>
+                        <div class="timeline-position">Università di Milano, Facoltà di Scienze dell'informazione</div>
+                        <div class="timeline-description">
+                            <p>Mi iscrivo a Milano, alla facoltà di Scienze dell'informazione, forte di una borsa di studio presa per il voto della maturità. Ma fatico non poco ad adattarmi alla grande città. E anche gli studi non vanno come vorrei. Le materie matematiche sono ostiche, e la limitata preparazione avuta dalla ragioneria mi obbliga a studiare, da solo, i libri di mia zia che aveva invece fatto lo scientifico. Nelle materie informatiche, invece, eccello. E negli esami pratici, propongo ai professori, di fare dei progetti molto più ambiziosi di quelli proposti. Studio in autonomia algoritmi di intelligenza artificiale (si, negli anni 90 c'era già,  e con computer immensamente meno potenti di quelli attuali) e sviluppo sistemi che, per quell'epoca, erano veramente all'avanguardia.</p>
+                            Ma il cuore mi gioca un brutto scherzo e, al terzo anno, lascio tutto per "amore".
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Militare -->
+            <div class="timeline-section">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-gun"></i></div>
+                    <h3 class="section-title-right">Carriera Militare</h3>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1993 - 1995</div>
+                        <div class="timeline-company"></div>
+                        <div class="timeline-position">Scuola di Artiglieria di Bracciano</div>
+                        <div class="timeline-description">
+                            <p>Nel 1993 faccio il militare come ufficiale di complemento nel corpo di Artiglieria da Montagna. Termino il corso ufficiali e sono uno dei primi del mio corso. Mi viene chiesto di rimanere alla Scuola di Artiglieria di Bracciano e lì presto servizio come Sottotenente istruttore.</p>
+                            Ma l'informatica chiama anche là e, fra un addestramento e l'altro, studio e documento il sistema informatico utilizzato per il calcolo dei dati di tiro. Documentazione che verrà poi usata dalla Scuola per addestrare le future generazioni di allievi ufficiali.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lavoro -->
+            <div class="timeline-section">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3 class="section-title-right">Esperienze Lavorative</h3>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">1995 - 2006</div>
+                        <div class="timeline-company"></div>
+                        <div class="timeline-position">Metodo Spa di Bassano del Grappa</div>
+                        <div class="timeline-description">
+                            <p>Uscito con i gradi di tenente, inizio a cercare lavoro e mando curriculum come… ragioniere :-( Alcune banche mi rispondono e i colloqui vanno bene. Ma il mio destino era un altro. Ed una serie fortuita di coincidenze (ma il caso, poi, esiste davvero?) mi portano a bussare alla porta della Metodo Spa di Bassano del Grappa. Software House locale che sviluppa un software gestionale per aziende.</p>
+                            <p> Là trovo terreno fertile per la mia passione. É periodo di grandi cambiamenti perché si sta passando dal mondo DOS con interfaccia a caratteri al mondo delle finestre, dei mouse e della grafica. Windows é approdato nei PC e il gestionale va riscritto. Entro nel team ed inizio quasi subito a sviluppare i moduli di magazzino e produzione.</p>
+                            <p>In pochi anni, complice il forfait dei vecchi responsabili di prodotto, divento io stesso responsabile di prodotto. Cambiano le tecnologie, i sistemi operativi e continuo a sfornare prodotti innovativi che vengono aggiunti al carnet del gestionale.</p>
+                            Nel 2002 esce la prima versione di <b>Microsoft.Net</b> (framword di programmazione Microsoft molto innovativo per l'epooca) ma Metodo non era pronta per un nuovo cambio tecnologico e continua a sviluppare nelle vecchie tecnologie. Inizio a studiare da solo e mi appassiono al mondo “mobile” che iniziava a fare i primi passi. Acquisto un palmare usato ed inizio a svilupparci sopra applicazioni che usavo io stesso.
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-date">2006</div>
+                        <div class="timeline-company"></div>
+                        <div class="timeline-position">Libero professionista</div>
+                        <div class="timeline-description">
+                            Lavoro in Metodo Spa come dipendente dal 1995 al 2006.
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Timeline Closure -->
+            <div class="timeline-closure">
+                <div class="timeline-end-line"></div>
+            </div>
+
+            <!-- Skills & Expertise Section -->
+            <div class="generic-section">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-tools"></i></div>
+                    <h3 class="section-title-right">Skills & Expertise</h3>
+                    <div class="section-line"></div>
+                </div>
+                <div class="about-content">
+                    <p>Software Architect con oltre 10 anni di esperienza nello sviluppo di soluzioni enterprise scalabili e robuste. Specializzato in architetture cloud-native, microservizi e tecnologie moderne. Passione per l'innovazione tecnologica e la creazione di sistemi che risolvono problemi reali.</p>
+                    <p>Esperto in progettazione di API, gestione di database distribuiti e implementazione di best practices per lo sviluppo software. Forte background in leadership tecnica e mentoring di team di sviluppo.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
