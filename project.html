@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum atipico di un Informatico</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;            
+        }
+
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Left Column - Dark */
+        .left-column {
+            width: 20%;
+            background-color: #2c2c2c;
+            color: white;
+            padding: 40px 25px;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin: 0 auto 30px;
+            background-color: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+            overflow: hidden;
+        }
+
+        .profile-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .contact-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #2c2c2c;
+        }
+
+        .education {
+            margin-bottom: 30px;
+        }
+
+        .education-item {
+            margin-bottom: 15px;
+        }
+
+        .education-item h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .education-item p {
+            font-size: 12px;
+            color: #ccc;
+            margin-bottom: 3px;
+        }
+
+        .references {
+            margin-bottom: 30px;
+        }
+
+        .reference-item {
+            margin-bottom: 15px;
+        }
+
+        .reference-item h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .reference-item p {
+            font-size: 12px;
+            color: #ccc;
+            margin-bottom: 3px;
+        }
+
+        /* Right Column - Light */
+        .right-column {
+            width: 80%;
+            background-color: #f8f8f8;
+            padding: 40px 30px;
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .name {
+            font-size: 36px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #2c2c2c;
+            margin-bottom: 10px;
+        }
+
+        .title {
+            font-size: 18px;
+            text-transform: uppercase;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .timeline-section {
+            margin-bottom: 0px;
+        }
+
+        .generic-section {
+            margin-top: 20px;
+            margin-bottom: 30px;
+        }
+
+        .about-content {
+            margin-top: 20px;
+        }
+
+        .about-content p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .section {
+            margin-bottom: 0px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;            
+        }
+
+        .section-icon {
+            width: 30px;
+            height: 30px;
+            background-color: #2c2c2c;
+            margin-right: 10px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            color: white;
+        }
+
+        .section-title-right {
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #2c2c2c;
+            margin-right: 10px;
+        }
+
+        .section-line {
+            flex: 1;
+            height: 2px;
+            background-color: #2c2c2c;
+        }
+
+        .timeline {
+            position: relative;
+            padding-top: 10px;
+            padding-left: 20px;
+            margin-top: 0px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 13px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #2c2c2c;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 10px;
+            padding-top: 5px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -12px;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background-color: #2c2c2c;
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-size: 14px;
+            font-weight: bold;
+            color: #2c2c2c;
+            margin-bottom: 5px;
+        }
+
+        .timeline-company {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c2c2c;
+            margin-bottom: 5px;
+        }
+
+        .timeline-position {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .timeline-description {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .timeline-description p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        .timeline-closure {
+            margin: 0px;
+            padding-left: 13px;
+        }
+
+        .timeline-end-line {
+            width: 100%;
+            height: 1px;
+            background-color: #2c2c2c;
+            position: relative;
+        }        
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+
+        .skill-item {
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .skill-item::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #2c2c2c;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .left-column,
+            .right-column {
+                width: 100%;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .figure-image {
+            border: 3px solid #2c2c2c;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            margin-left: 10px;
+			float: right;
+            clear: both;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Column -->
+        <div class="left-column">
+            <!-- Profile Picture -->
+            <div class="profile-picture">
+                <img src="./myphoto.jfif" alt="Profile Picture">
+            </div>
+
+            <!-- Contact Section -->
+            <div class="contact-info">
+                <h3 class="section-title">Contatto</h3>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>
+                        <div>Via E.Toti, 18</div>
+                        <div>Bassano del Grappa (VI)</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div>+39 3930227248</div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div>ferraro.luigi@gmail.com</div>
+                </div>
+            </div>        
+        </div>
+
+        <!-- Right Column -->
+        <div class="right-column">
+            <!-- Header -->
+            <div class="header">
+                <h1 class="name">Cos’è la Programmazione</h1>
+                <h2 class="title"></h2>
+            </div>
+
+            <div class="timeline-section">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-robot"></i></div>
+                    <h3 class="section-title-right">Il gioco dell'amico robot</h3>
+                    <div class="section-line"></div>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Scopi</div>
+                        <div class="timeline-description">
+                            <p>
+                                <ul>
+                                    <li>Introdurre il concetto di programmazione come scrittura di una sequenza di istruzioni necessarie per eseguire un determinato compito.</li>
+                                    <li>Introdurre il concetto di “istruzioni”, “variabili”, “cicli”, “espressioni condizionali” ovvero i mattoni fondamentali della programmazione.</li>
+                                    <li>Invitare a pensare ad un problema in modo computazionale ovvero scomporlo in sottoproblemi sempre più piccoli fino a raggiungere istruzioni elementari.</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Come si svolge - Parte 1</div>
+                        <div class="timeline-description">							
+                            <ul>
+                                <li>Si sceglie un bambino che farà l’amico “robot”.</li>
+                                <li>Si sceglie un gruppo di bambini che faranno i “programmatori” (alla lavagna).</li>
+                                <li>Il robot non potrà prendere iniziative e dovrà eseguire solamente le istruzioni dei programmatori.</li>
+                                <li>Il compito che deve eseguire il robot sarà partire da un punto stabilito della classe e raggiungerne un altro (ad esempio due angoli contrapposti della classe).</li>
+                                <li>I programmatori dovranno dare istruzioni al robot per eseguire questo compito senza sbattere contro i banchi.</li>
+                                <li>Viene dato un primo “set di istruzioni” che i programmatori possono usare:</li>
+                                <ul style="margin-left: 20px;">
+                                    <li>FAI n PASSI</li>
+                                    <li>GIRA A SX di 90°</li>
+                                    <li>GIRA A DX di 90°</li>    
+                                </ul>
+                                <li>Si fanno lavorare i programmatori fino al raggiungimento dell’obbiettivo.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Come si svolge - Parte 2</div>
+                        <div class="timeline-description">							
+                            <ul>
+                                <li>Quando il compito è raggiunto si complica la situazione</li>
+                                <li>Si aggiungono degli “ostacoli mobili” ovvero 2 o 3 bambini che si muovono a piacimento. Ad ogni passo del robot possono fare un passo. Non possono mai stare fermi.</li>
+                                <li>Si modifica il set di istruzioni precedente</li>
+                                <ul style="margin-left: 20px;">
+                                    <li>FAI 1 PASSO</li>
+                                    <li>GIRA A SX di 90°</li>
+                                    <li>GIRA A DX di 90°</li>
+                                    <li>RIPETI n VOLTE</li>
+                                    <li>FERMATI (il robot non fa nulla)</li>
+                                    <li>SE condizione ALLORA istruzione</li>
+                                </ul>
+                                <li>Il fatto di non poter specificare il numero di passi dovrebbe spingere i bambini ad usare dei cicli con delle condizioni.</li>
+                                <li>Nota: Potrebbero anche fare tante istruzioni FAI 1 PASSO nel qual caso vanno un po' aiutati a trovare la soluzione</li>
+                                <li>Si fanno lavorare i programmatori fino al raggiungimento dell'obbiettivo.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Approfondimenti</div>
+                        <div class="timeline-description">
+                            <p>Si spiega cosa sono:
+                                <ul style="margin-left: 20px;">
+                                    <li>le istruzioni</li>
+                                    <li>le variabili</li>
+                                    <li>i cicli</li>
+                                    <li>le espressioni condizionali</li>
+                                    <li>FAI n PASSI, GIRA A SX, GIRA A DX sono istruzioni.</li>
+                                </ul>    
+                            </p>
+                            <p>Nell'istruzione FAI n PASSI, "n" è una <b>variabile</b>. Una variabile è un contenitore, una “scatola” che contiene un valore.</p>
+                            <p>L'istruzione RIPETI n VOLTE permette di definire un <b>ciclo</b>.</p>
+                            <p>L'istruzione SE…ALLORA permette di definire una <b>espressione condizionale</b> ovvero di fare una domanda alla quale il robot risponde con “vero” o “falso”.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-section">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-code"></i></div>
+                    <h3 class="section-title-right">Cos'è un linguaggio di programmazione</h3>
+                    <div class="section-line"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Scopi</div>
+                        <div class="timeline-description">
+                            <p>
+                                <ul>
+                                    <li>Introdurre il concetto di linguaggio di programmazione come estensione di quanto mostrato nel gioco dell'amico robot.</li>
+                                    <li>Introdurre il concetto di compilazione</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Come si svolge</div>
+                        <div class="timeline-description">							
+                            <ul>
+                                <li>Il “cervello” del computer (chiamata CPU) è come l'amico robot.</li>
+                                <li>Sa eseguire un set limitato di istruzioni estremamente semplici. Si chiamano “micro istruzioni”.</li>
+                                <li>Nonostante questa limitatezza fa tutto ciò che vediamo su un PC, su un cellulare, un tablet, ecc.</li>
+                                <li>I programmatori non usano queste micro istruzioni perchè sarebbe troppo complicato fare anche programmi molto semplici.</li>
+                                <li>Pertanto sono stati inventati linguaggi di programmazione che hanno un set di istruzioni molto più potenti rispetto alle micro istruzioni.</li>
+                                <li>Le istruzioni usate dal programmatore vengono “tradotte” in micro istruzioni (le uniche che può comprendere l’amico robot) durante la fase di “compilazione” del programma.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-section">
+                <div class="section-header">
+                    <div class="section-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3 class="section-title-right">Programmiamo un videogioco</h3>
+                    <div class="section-line"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">Scopi</div>
+                        <div class="timeline-description">
+                            <p>
+                                <ul>
+                                    <li>Mostrare un linguaggio di programmazione evoluto che i bambini possono usare per fare i loro programmi.</li>
+                                    <li>Mostrargli i concetti svolti durante il gioco dell'amico robot eseguiti da un computer.</li>
+                                    <li>Coinvolgerli permettendogli di sviluppare un semplice videogioco (almeno per i maschi dovrebbe essere un'attrazione irresistibile).</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Come si svolge - Parte 1</div>
+                        <div class="timeline-description">							
+                            <ul>
+                                <li>Viene presentato l'ambiente di programmazione Scratch (<a href="https://scratch.mit.edu/">https://scratch.mit.edu/</a>)</li>
+                                <li>Vengono introdotte le basi dell'ambiente:</li>
+                                <ul style="margin-left: 20px;">
+                                    <li>sfondi</li>
+                                    <li>sprite</li>
+                                    <li>come inserire un'istruzione</li>
+                                    <li>come eseguire il programma</li>
+                                </ul>                                                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">Come si svolge - Parte 2</div>
+                        <div class="timeline-description">							
+                            <ul>
+                                <li>Spiego cosa voglio ottenere e poi inserisco le istruzioni per farlo.</li>
+                                <li>Lanciando il programma si mostrano i risultati man mano.</li>
+                                <li>La spiegazione dovrebbe essere molto interattiva quindi:</li>
+                                <ul style="margin-left: 20px;">
+                                    <li>Se ci sono dei PC disponibili si fanno gruppi di bambini che cercando di rifare quello che mostro.</li>
+                                    <li>In caso contrario bisogna chiedere ai bambini cosa fare man mano (avendo ben presente il risultato che si vuole ottenere) ed io lo realizzo spiegando cosa sto facendo.</li>
+                                    <li>Una volta raggiunto il risultato si possono lanciare “piccole sfide” chiamando gruppi di bambini che faranno loro delle piccole esercitazioni.</li>
+                                    <li>Devo trovare una cosa sufficientemente semplice da fare per renderla comprensibile ai bambini e non troppo laboriosa da sviluppare nel tempo che si ha.</li>
+                                </ul>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Timeline Closure -->
+            <div class="timeline-closure">
+                <div class="timeline-end-line"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
